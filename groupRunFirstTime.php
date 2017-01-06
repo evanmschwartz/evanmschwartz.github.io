@@ -1,7 +1,7 @@
 <?php
-$phonenumber = $_POST["phonenumber"];
-$firstname = $_POST["firstname"];
-$lastname = $_POST["lastname"];
+$phonenumber = $_GET["phonenumber"];
+$firstname = $_GET["firstname"];
+$lastname = $_GET["lastname"];
 
 echo $phonenumber;
 echo $firstname;
