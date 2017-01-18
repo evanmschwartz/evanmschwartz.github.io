@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Evan Schwartz">
+  
+<! Inspiration from BBQlays Race Reportr>
+
+<title> Advanced Running Training Question Generator </title>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">AR Training Question Generator</a>
+      </div>
+    </div>
+  </nav>
+
+	<div class="container">
+    <div class="starter-template">
+      <div class="row">
+        <div class="col-sm-9">
+          <h2 class="lead">Please fill out the form and click the <strong>generate</strong> button to produce a training post on <em>/r/advancedrunning</em>.</h2>
+          
+          <button class="btn btn-primary" id="generate-button">generate</button>
+        </div>
+      </div>
+
+	<div class="row">
+        <div class="col-sm-6">
+         
+		 <!-- General information. 
+          ==================================== -->
+          <h2 class="lead"><em>Personal Information</em></h2>
+
+          <div class="form-group">
+            <label for="age">Age?</label>
+            <input id="age" type="text" class="longer" placeholder="Age">
+          </div>
+          <div class="form-group">
+            <label for="sex">Sex?</label>
+            <input id="sex" type="text" class="longer" placeholder="M or F">
+          </div>
+		  <div class="form-group">
+            <label for="training-age">Number of years you have been running?</label>
+            <input id="training-age" type="text" class="longer" placeholder="Training Age">
+          </div>
+		  <div class="form-group">
+            <label for="PeakMPW">Previous peak MPW?</label>
+            <input id="PeakMPW" type="text" class="longer" placeholder="Peak Mileage">
+          </div>
+		  
+		  
+		  <!-- Personal Records 
+          ==================================== -->
+          <h2 class="lead"><em>Personal Records: Please fill out whatever PRs you can in the section below.</em></h2>
+		  
+		  <div class="PR">
+			400m: 
+			<input type="text" name="400m"> <br>
+			800m:
+			<input type="text" name="400m"> <br>
+			1500m/1600m/Mile (please specify): 
+			<input type="text" name="400m"> <br>
+			3000m/3200m/2 Mile (please specify) :
+			<input type="text" name="400m"> <br>
+			3 mile / 5K (please specify): 
+			<input type="text" name="400m"> <br>
+			10K:
+			<input type="text" name="400m"> <br>
+			Half Marathon:
+			<input type="text" name="400m"> <br>
+			Marathon:
+			<input type="text" name="400m"> <br>
+			
+			
+			
+			
+		  </div>
+		  
+		  
+		  
+		  <!-- Goals information. 
+          ==================================== -->
+          <h2 class="lead"><em>goals</em></h2>
+		  
+		  
+		  <div class="form-group">
+            <label for="mileage">Current Mileage (or KM) per week?</label>
+            <input id="mileage" type="text" class="longer" placeholder="Mileage">
+          </div>
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+          <div class="form-group">
+            <label for="race-date">race date</label>
+            <input id="race-date" type="text" class="longer" placeholder="April 16, 2016">
+          </div>
+          <div class="form-group">
+            <label for="race-website">race website</label>
+            <input id="race-website" type="text" class="longer" placeholder="http://www.reddit.com/r/running">
+          </div>
+
+          <hr />
+          
+          <!-- Goals information. 
+          ==================================== -->
+          <h2 class="lead"><em>goals</em></h2>
+
+          <div class="form-group">
+            <label for="goal-a">A goal</label>
+            <input id="goal-a" type="text" style="display: inline" placeholder="< 2 hours">
+            <div class="checkbox checkbox-inline checkbox-success">
+              <input type="checkbox" id="goal-a-completed">
+              <label for="goal-a-completed">Completed?</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="goal-b">B goal</label>
+            <input id="goal-b" type="text" style="display: inline" placeholder="< 2.5 hours">
+            <div class="checkbox checkbox-inline checkbox-success">
+              <input type="checkbox" id="goal-b-completed">
+              <label for="goal-b-completed">Completed?</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="goal-c">C goal</label>
+            <input id="goal-c" type="text" style="display: inline" placeholder="don't die">
+            <div class="checkbox checkbox-inline checkbox-success">
+              <input type="checkbox" id="goal-c-completed">
+              <label for="goal-c-completed">Completed?</label>
+            </div>
+          </div>
+
+          <hr />
+        </div>
+
+        <div class="col-sm-6">
+          <!-- Pictures section. 
+          ==================================== -->
+          <div class="pictures-section">
+            <h2 class="lead"><em>pictures</em></h2>
+
+            <div class="form-group">
+              <input class="square-btn-inline picture-add-btn" type="button" value="+">
+              <input class="square-btn-inline picture-sub-btn" type="button" value="-">
+            </div>
+
+            <div class="pictures">
+            </div>
+          </div>
+
+          <hr />
+          
+          <!-- Splits information. 
+          ==================================== -->
+          <div class="splits-section">
+            <h2 class="lead"><em>splits</em></h2>  
+            
+            <div class="form-group">
+              <label for="distance-choice">distance type</label>
+              <div id="distance-type" class="radio radio-primary">
+                <input type="radio" name="split-distance" id="distance-choice-miles" value="miles" checked>
+                <label for="distance-choice-miles">miles</label>
+              </div>
+              <div class="radio radio-primary">
+                <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">
+                <label for="distance-choice-kilometers">kilometers</label>
+              </div>
+            </div>
+                      
+            <div class="form-group">
+              <input class="square-btn-inline split-add-btn" type="button" value="+">
+              <input class="square-btn-inline split-sub-btn" type="button" value="-">
+            </div>
+            
+            <div class="splits"> 
+            </div>
+          </div>
+
+          <hr />
+          
+          <!-- Text-heavy sections. 
+          ==================================== -->
+          <h2 class="lead"><em>text-heavy sections</em></h2>
+          <p>The following rows will appear as subheaders for you to tell the tale of your race.</p>
+          <p class="small"><strong>Note: If you select "Custom", a placeholder will be created for you that you can replace later.</strong></p>
+          
+          <div class="text-heavy-section">
+            <div class="form-group">
+              <input class="square-btn-inline text-add-btn" type="button" value="+">
+              <input class="square-btn-inline text-sub-btn" type="button" value="-">
+            </div>
+            
+            <div class="text-heavy-sections">
+            </div>
+          </div>
+          
+          <hr />
+          
+        </div>
+      </div>             
+    </div>
+  </div>
+  <!-- /.container -->
